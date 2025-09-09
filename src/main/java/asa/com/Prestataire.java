@@ -27,9 +27,8 @@ public class Prestataire extends Travailleur{
     }
 
     public int nombreDeJour(LocalDate dateDeDebut,LocalDate dateDeFin){
-
-
-
+       int nombre = dateDeFin.getDayOfMonth() - dateDeFin.getDayOfMonth();
+        return nombre;
     }
 
     public double calculSalaire(LocalDate dateDeDebut, LocalDate dateDeFin) {
