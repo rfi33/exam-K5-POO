@@ -26,6 +26,16 @@ public class Prestataire extends Travailleur{
         return salaires;
     }
 
+    public String pointage(LocalDate date,int temps){
+       if(temps == 1){
+           return "true";
+       } else if (temps > 1) {
+           return "false";
+       }else {
+           return "IllegalArgumentException";
+       }
+    }
+
     public int nombreDeJour(LocalDate dateDeDebut,LocalDate dateDeFin){
        int nombre = dateDeFin.getDayOfMonth() - dateDeFin.getDayOfMonth();
         return nombre;
