@@ -61,8 +61,10 @@ class PrestataireTest {
         LocalDate date3= LocalDate.of(2023,8,20);
     assertAll(
             "",
-            ()-> assertEquals("true",prestataire.pointage(date3,1)),
-            ()-> assertEquals("false",prestataire.pointage(date3,0.8f),"")
+            ()-> assertEquals("true",prestataire.pointage(date3,1),"retourne true"),
+            ()-> assertEquals("false",prestataire.pointage(date3,0.8f),"retourne false"),
+            ()-> assertEquals("IllegalArgumentException",prestataire.pointage(date3,1.2f),"retoune IllegalArgumentException"),
+        ()-> assertNotEquals("false",prestataire.pointage(date3,1),"doit retourne ture");
     );
     }
 }
