@@ -64,7 +64,7 @@ class PrestataireTest {
             ()-> assertEquals("true",prestataire.pointage(date3,1),"retourne true"),
             ()-> assertEquals("false",prestataire.pointage(date3,0.8f),"retourne false"),
             ()-> assertEquals("IllegalArgumentException",prestataire.pointage(date3,1.2f),"retoune IllegalArgumentException"),
-        ()-> assertNotEquals("false",prestataire.pointage(date3,1),"doit retourne ture");
+        ()-> assertNotEquals("false",prestataire.pointage(date3,1),"doit retourne ture")
     );
     }
 }
