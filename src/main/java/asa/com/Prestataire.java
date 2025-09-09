@@ -1,5 +1,6 @@
 package asa.com;
 
+import java.text.DecimalFormat;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -26,7 +27,7 @@ public class Prestataire extends Travailleur{
         return salaires;
     }
 
-    public String pointage(LocalDate date,int temps){
+    public String pointage(LocalDate date, float temps){
        if(temps == 1){
            return "true";
        } else if (temps > 1) {

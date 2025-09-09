@@ -13,11 +13,12 @@ import static org.junit.jupiter.api.Assertions.*;
 class PrestataireTest {
 
     private Prestataire prestataire;
+    private HistoriqueSalaire historiqueSalaireList;
 
     @BeforeEach
     void setUp(){
         prestataire = new Prestataire(1,"Rakoto","Son","Son126@gmail.com","+261343423854",new ArrayList<>());
-
+        historiqueSalaireList = new HistoriqueSalaire(10000.00,LocalDate.of(2023,1,9),"salaire de base");
     }
 
     @Test
@@ -47,10 +48,21 @@ class PrestataireTest {
         LocalDate date1 = LocalDate.of(2023,5,1);
          LocalDate date2=  LocalDate.of(2023,7,7);
         LocalDate date3= LocalDate.of(2023,8,20);
+
         assertAll(
                 "Retourne la somme du salaire par mois a un instant donner",
                 () -> assertEquals(20000,prestataire.calculSalaire(date1,date2) ,"Retourne 20000"),
-                () -> assertEquals(30000,prestataire.calculSalaire(date1,date3) ,"Retourne 40000")
+                () -> assertEquals(30000,prestataire.calculSalaire(date1,date3) ,"Retourne 30000")
             );
+    }
+
+    @Test
+    void pointage() {
+        LocalDate date3= LocalDate.of(2023,8,20);
+    assertAll(
+            "",
+            ()-> assertEquals("true",prestataire.pointage(date3,1)),
+            ()-> assertEquals("false",prestataire.pointage(date3,0.8f),"")
+    );
     }
 }
